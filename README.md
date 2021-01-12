@@ -2,7 +2,7 @@
 
 Create and interact with field selections with this easy-to-use extension.
 
-<img src="imgs/example.PNG" alt="Selections example" width="750">
+<img src="https://github.com/JordiFerrerB/sis-horizontalselector/blob/main/imgs/example.PNG" alt="Selections example" width="750">
 
 ## Download
 

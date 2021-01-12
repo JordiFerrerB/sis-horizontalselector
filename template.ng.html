@@ -1,0 +1,12 @@
+<div qv-extension class="dim-container" ng-init="getFields()">
+    <div class="dim-item" ng-repeat="dimension in dimData">
+        <div class="item-label dim-label">
+            <span>{{dimension.label}}</span>
+        </div>
+        <div class="lui-buttongroup">
+            <button class="lui-button lui-buttongroup__button {{qValue.state}}" ng-repeat="qValue in dimension.values" data-value="{{qValue.value}}" data-dim="{{dimension.name}}" data-qNum="{{qValue.qNum}}" ng-click="onClickButton($event)">
+                {{qValue.value}}
+            </button>
+        </div>
+    </div>
+</div>

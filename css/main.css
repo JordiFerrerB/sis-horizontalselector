@@ -1,0 +1,29 @@
+.dim-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.dim-container .dim-label{
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+.dim-container .dim-item{
+    margin: 0 0.7rem;
+}
+.dim-container button{
+    font-size: 0.75rem;
+    padding: 0px 8px 2px 8px;
+    height: 24px;
+    min-width: 0;
+    transition: all 0.35s ease;
+}
+
+.dim-container .S{
+    color: white;
+    background: #42c24e;
+}
+
+.dim-container .X{
+    color: white;
+    background: #A8A8A8;
+}

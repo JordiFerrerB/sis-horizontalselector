@@ -15,7 +15,9 @@ define([], function () {
         allowAdd: true,
         allowRemove: true,
         addTranslation: "Add Field",
-        itemTitleRef: "fieldLabel",
+        itemTitleRef: function(data){
+          return data.fieldLabel? data.fieldLabel : data.qListObjectDef.qDef.qFieldDefs[0];
+        },
         items: {
           fieldName: {
             component: "expression",

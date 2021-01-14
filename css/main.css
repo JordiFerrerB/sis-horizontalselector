@@ -1,7 +1,10 @@
 .dim-container{
     display: flex;
-    justify-content: flex-start;
     flex-wrap: wrap;
+    align-content: start;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
 }
 .dim-container .dim-label{
     font-weight: bold;

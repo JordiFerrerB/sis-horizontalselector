@@ -8,6 +8,9 @@ define([], function () {
     type: "items",
     component: "accordion",
     items: {
+      settings: {
+        uses: "settings"
+      },
       dimensions: {
         type: "array",
         ref: "lists",

@@ -1,7 +1,9 @@
 .dim-container{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    align-content: start;
+    justify-content: start;
+    align-items: center;
     width: 100%;
     height: 100%;
     overflow-y: auto;
@@ -15,7 +17,7 @@
 }
 .dim-container button{
     font-size: 0.75rem;
-    padding: 0px 8px 2px 8px;
+    padding: 0px 6px;
     height: 24px;
     min-width: 0;
     transition: all 0.35s ease;

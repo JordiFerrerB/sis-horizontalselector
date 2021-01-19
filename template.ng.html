@@ -4,7 +4,10 @@
             <span>{{dimension.label}}</span>
         </div>
         <div class="lui-buttongroup">
-            <button class="lui-button lui-buttongroup__button {{qValue.state}}" ng-repeat="qValue in dimension.values" data-value="{{qValue.value}}" data-dim="{{dimension.name}}" data-qNum="{{qValue.qNum}}" ng-click="onClickButton($event)">
+            <button class="lui-button lui-buttongroup__button {{qValue.state}}" ng-repeat="qValue in dimension.values"
+                data-value="{{qValue.value}}" data-dim="{{dimension.name}}" data-qNum="{{qValue.qNum}}"
+                ng-click="onClickButton($event)" cl-swipestart="onSwipeStart($event)" cl-swipeupdate="onSwipeUpdate($event)" 
+                cl-swipe="onSwipe($event)">
                 {{qValue.value}}
             </button>
         </div>

@@ -51,8 +51,8 @@ define([
           return !isNaN(qNum) ? parseInt(qNum) : dataValue;
         };
 
+        // Add value to queue and select/deselect 
         var selectSwipeValue = function(target, value){
-          console.log('SET', target, value)
           if ($scope.swipeSelections.isSelectOperation && !target[0].classList.contains("S")) { //Select
             $scope.swipeSelections.selectValues.push(value);
             target.removeClass("A X O");   
@@ -92,7 +92,6 @@ define([
 
         // On swipe end: selectValues
         $scope.onSwipe = function (event) {
-          console.log($scope.swipeSelections);
           if ($scope.swipeSelections.selectValues) {
             app
               .field($scope.swipeSelections.selectedDimension)
@@ -106,8 +105,6 @@ define([
           var target = $(event.target);
           var dimension = target.attr("data-dim");
           var value = getTargetValue(target);
-
-          console.log(dimension, value);
 
           app.field(dimension).selectValues([value], true, true);
           // target.toggleClass("button-active");

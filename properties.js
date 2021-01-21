@@ -35,6 +35,23 @@ define([], function () {
             ref: "fieldLabel",
             label: "Label",
           },
+          labelPosition: {
+            type: "string",
+            component: "dropdown",
+            ref: "fieldLabelPos",
+            label: "Label position",
+            defaultValue: "UP",
+            options: [
+              {
+                value: "UP",
+                label: "Up"
+              },
+              {
+                value: "LEFT",
+                label: "Left"
+              }
+            ]
+          },
           sortDefault: {
             type: "boolean",
             ref: "sortDefault",

@@ -1,34 +1,57 @@
-.dim-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-}
-.dim-container .dim-label{
-    font-weight: bold;
-    font-size: 0.75rem;
-}
-.dim-container .dim-item{
-    margin: 0.3rem 0.7rem;
-}
-.dim-container button{
-    font-size: 0.75rem;
-    padding: 0px 6px;
-    height: 24px;
-    min-width: 0;
-    transition: all 0.35s ease;
+.dim-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
 }
 
-.dim-container .S{
-    color: white;
-    background: #42c24e;
+.dim-container .dim-item {
+  display: flex;
+  margin: 0.3rem 0.7rem;
 }
 
-.dim-container .X{
-    color: white;
-    background: #A8A8A8;
+.dim-container .dim-label {
+  font-weight: normal;
+  font-size: 0.75rem;
+}
+
+.labelUp {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.labelLeft {
+  flex-direction: left;
+  align-items: center;
+}
+
+.isLabelLeft {
+  margin-right: 0.5rem;
+}
+
+.dim-container button {
+  font-size: 0.75rem;
+  padding: 0px;
+  height: 24px;
+  min-width: 0;
+  transition: all 0.35s ease;
+}
+
+.dim-container button span {
+  padding: 0px 6px;
+  pointer-events: none;
+}
+
+.dim-container .S {
+  color: white;
+  background: #42c24e;
+}
+
+.dim-container .X {
+  color: white;
+  background: #a8a8a8;
 }

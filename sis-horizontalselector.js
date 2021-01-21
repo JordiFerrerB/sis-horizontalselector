@@ -32,6 +32,7 @@ define([
             if (field.qListObject.qDataPages.length > 0) {
               $scope.dimData.push({
                 label: field.fieldLabel,
+                labelPos: field.fieldLabelPos,
                 name: field.qListObject.qDimensionInfo.qFallbackTitle,
                 values: field.qListObject.qDataPages[0].qMatrix.map((value) => {
                   return {

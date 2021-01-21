@@ -29,11 +29,31 @@ define([], function () {
             defaultValue: "",
             label: "Field",
           },
+          showFieldLabel: {
+            type: "boolean",
+            component: "switch",
+            ref: "showFieldLabel",
+            label: "Show field label",
+            defaultValue: false,
+            options: [
+              {
+                value: false,
+                label: "No"
+              },
+              {
+                value: true,
+                label: "Yes"
+              }
+            ]
+          },
           fieldLabel: {
             type: "string",
             expression: "optional",
             ref: "fieldLabel",
             label: "Label",
+            show: function(data){
+              return data.showFieldLabel;
+            }
           },
           labelPosition: {
             type: "string",
@@ -50,7 +70,10 @@ define([], function () {
                 value: "LEFT",
                 label: "Left"
               }
-            ]
+            ],
+            show: function(data){
+              return data.showFieldLabel;
+            }
           },
           sortDefault: {
             type: "boolean",

@@ -31,6 +31,7 @@ define([
           $scope.layout.lists.forEach((field) => {
             if (field.qListObject.qDataPages.length > 0) {
               $scope.dimData.push({
+                showLabel: field.showFieldLabel,
                 label: field.fieldLabel,
                 labelPos: field.fieldLabelPos,
                 name: field.qListObject.qDimensionInfo.qFallbackTitle,

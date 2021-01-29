@@ -12,6 +12,9 @@ Download the latest version from [here](https://github.com/JordiFerrerB/sis-hori
 
 * Dimensions
     * Field name
+    * Field type [v 1.2]
+      * List
+      * Dropdown
     * Label
     * Sort Order
         * Automatic
@@ -21,4 +24,6 @@ Download the latest version from [here](https://github.com/JordiFerrerB/sis-hori
             * By alphabetical order
 
 
+# Changelog
 
+   * v 1.2: Added dropdowns with multiple selections.

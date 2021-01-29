@@ -29,6 +29,23 @@ define([], function () {
             defaultValue: "",
             label: "Field",
           },
+          fieldType: {
+            type: "string",
+            component: "dropdown",
+            ref: "fieldType",
+            label: "Field Type",
+            defaultValue: "LIST",
+            options: [
+              {
+                value: "LIST",
+                label: "List"
+              },
+              {
+                value: "DROPDOWN",
+                label: "Dropdown"
+              }
+            ]
+          },
           showFieldLabel: {
             type: "boolean",
             component: "switch",
@@ -60,7 +77,7 @@ define([], function () {
             component: "dropdown",
             ref: "fieldLabelPos",
             label: "Label position",
-            defaultValue: "UP",
+            defaultValue: "LEFT",
             options: [
               {
                 value: "UP",
@@ -72,7 +89,7 @@ define([], function () {
               }
             ],
             show: function(data){
-              return data.showFieldLabel;
+              return data.showFieldLabel && data.fieldType != "DROPDOWN";
             }
           },
           sortDefault: {

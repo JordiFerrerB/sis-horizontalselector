@@ -8,9 +8,6 @@ define([], function () {
     type: "items",
     component: "accordion",
     items: {
-      settings: {
-        uses: "settings"
-      },
       dimensions: {
         type: "array",
         ref: "lists",
@@ -18,13 +15,15 @@ define([], function () {
         allowAdd: true,
         allowRemove: true,
         addTranslation: "Add Field",
-        itemTitleRef: function(data){
-          return data.fieldLabel? data.fieldLabel : data.qListObjectDef.qDef.qFieldDefs[0];
+        itemTitleRef: function (data) {
+          return data.fieldLabel
+            ? data.fieldLabel
+            : data.qListObjectDef.qDef.qFieldDefs[0];
         },
         items: {
           fieldName: {
-            component: "expression",
-            expression: "optional",
+            component: "string",
+//            expression: "optional",
             ref: "qListObjectDef.qDef.qFieldDefs.0",
             defaultValue: "",
             label: "Field",
@@ -38,13 +37,13 @@ define([], function () {
             options: [
               {
                 value: "LIST",
-                label: "List"
+                label: "List",
               },
               {
                 value: "DROPDOWN",
-                label: "Dropdown"
-              }
-            ]
+                label: "Dropdown",
+              },
+            ],
           },
           showFieldLabel: {
             type: "boolean",
@@ -55,22 +54,22 @@ define([], function () {
             options: [
               {
                 value: false,
-                label: "No"
+                label: "No",
               },
               {
                 value: true,
-                label: "Yes"
-              }
-            ]
+                label: "Yes",
+              },
+            ],
           },
           fieldLabel: {
             type: "string",
             expression: "optional",
             ref: "fieldLabel",
             label: "Label",
-            show: function(data){
+            show: function (data) {
               return data.showFieldLabel;
-            }
+            },
           },
           labelPosition: {
             type: "string",
@@ -81,16 +80,16 @@ define([], function () {
             options: [
               {
                 value: "UP",
-                label: "Up"
+                label: "Up",
               },
               {
                 value: "LEFT",
-                label: "Left"
-              }
+                label: "Left",
+              },
             ],
-            show: function(data){
+            show: function (data) {
               return data.showFieldLabel && data.fieldType != "DROPDOWN";
-            }
+            },
           },
           sortDefault: {
             type: "boolean",
@@ -166,7 +165,67 @@ define([], function () {
             ref: "qListObjectDef.qInitialDataFetch.0.qHeight",
             label: "qHeight",
             show: false,
-            defaultValue: 1e3,
+            defaultValue: 25,
+          },
+        },
+      },
+      settings: {
+        uses: "settings",
+        items: {
+          // Labels settings
+          labelsFontSettings: {
+            type: "items",
+            label: "Labels font settings",
+            items: {
+              fontSize: {
+                type: "string",
+                component: "dropdown",
+                ref: "settings.labels.fontSize",
+                label: "Font size",
+                options: [
+                  { value: "small", label: "Small" },
+                  { value: "medium", label: "Medium" },
+                  { value: "large", label: "Large" },
+                ],
+              },
+              fontStyle: {
+                type: "number",
+                component: "dropdown",
+                ref: "settings.labels.fontWeight",
+                label: "Font weigth",
+                options: [
+                  { value: 400, label: "Normal" },
+                  { value: 600, label: "Bold" },
+                ],
+              },
+            },
+          },
+          valuesFontSettings: {
+            type: "items",
+            label: "Values font settings",
+            items: {
+              fontSize: {
+                type: "string",
+                component: "dropdown",
+                ref: "settings.values.fontSize",
+                label: "Font size",
+                options: [
+                  { value: "small", label: "Small" },
+                  { value: "medium", label: "Medium" },
+                  { value: "large", label: "Large" },
+                ],
+              },
+              fontStyle: {
+                type: "number",
+                component: "dropdown",
+                ref: "settings.values.fontWeight",
+                label: "Font weigth",
+                options: [
+                  { value: 400, label: "Normal" },
+                  { value: 600, label: "Bold" },
+                ],
+              },
+            },
           },
         },
       },

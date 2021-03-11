@@ -3,7 +3,7 @@
         ng-repeat="dimension in dimData">
         <div ng-if="dimension.showLabel && dimension.fieldType != 'DROPDOWN'" class="item-label dim-label"
             ng-class="{isLabelLeft: dimension.labelPos == 'LEFT'}">
-            <span>{{dimension.label}}</span>
+            <span ng-style="{'font-weight': layout.settings.labels.fontWeight, 'font-size': layout.settings.labels.fontSize}">{{dimension.label}}</span>
         </div>
         <!-- LIST -->
         <div ng-if="dimension.fieldType == 'LIST'" class="lui-buttongroup">
@@ -11,14 +11,14 @@
                 data-value="{{qValue.value}}" data-dim="{{dimension.name}}" data-qNum="{{qValue.qNum}}"
                 ng-click="onClickButton($event)" cl-swipestart="onSwipeStart($event)"
                 cl-swipeupdate="onSwipeUpdate($event)" cl-swipe="onSwipe($event)">
-                <span>{{qValue.value}}</span>
+                <span ng-style="{'font-weight': layout.settings.values.fontWeight, 'font-size': layout.settings.values.fontSize}">{{qValue.value}}</span>
             </button>
         </div>
         <!-- DROPDOWN -->
         <div ng-if="dimension.fieldType == 'DROPDOWN'" class="dropdown-list">
             <!-- TOGGLE -->
             <button class="dropdown-toggle lui-button" ng-click="onDropdownToggleClick($event)">
-                <span ng-if="dimension.showLabel">{{dimension.label}}</span>
+                <span ng-if="dimension.showLabel" ng-style="{'font-weight': layout.settings.labels.fontWeight, 'font-size': layout.settings.labels.fontSize}">{{dimension.label}}</span>
                 <i class="lui-icon lui-icon--triangle-bottom rm-pointer-events"></i>
             </button>
             <!-- DROPDOWN OPTIONS -->

@@ -26,6 +26,12 @@ Download the latest version from [here](https://github.com/JordiFerrerB/sis-hori
 
 # Changelog
 
-   * v 1.2: Added dropdowns with multiple selections.
+   * v1.2: Added dropdowns with multiple selections.
 
    <img src="https://github.com/JordiFerrerB/sis-horizontalselector/blob/main/imgs/dropdown-example.PNG" alt="Dropdown example" width="325">
+
+   * v1.3: 
+    * Removed expressions on dimensions.
+    * Added font size and weight settings.
+
+   <img src="https://github.com/JordiFerrerB/sis-horizontalselector/blob/main/imgs/font-settings.PNG">

@@ -22,6 +22,9 @@ Download the latest version from [here](https://github.com/JordiFerrerB/sis-hori
             * By load order
             * By numeric order
             * By alphabetical order
+* Appeareance
+   * Labels font settings [v 1.3]
+   * Values font settings [v 1.3]
 
 
 # Changelog

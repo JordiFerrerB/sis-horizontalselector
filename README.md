@@ -31,7 +31,7 @@ Download the latest version from [here](https://github.com/JordiFerrerB/sis-hori
    <img src="https://github.com/JordiFerrerB/sis-horizontalselector/blob/main/imgs/dropdown-example.PNG" alt="Dropdown example" width="325">
 
    * v1.3: 
-    * Removed expressions on dimensions.
-    * Added font size and weight settings.
+      * Removed expressions on dimensions.
+      * Added font size and weight settings.
 
    <img src="https://github.com/JordiFerrerB/sis-horizontalselector/blob/main/imgs/font-settings.PNG">

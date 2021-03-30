@@ -41,3 +41,9 @@ Download the latest version from [here](https://github.com/JordiFerrerB/sis-hori
       * Added font size and weight settings.
 
    <img src="https://github.com/JordiFerrerB/sis-horizontalselector/blob/main/imgs/font-settings.PNG">
+
+       * v1.3.1
+          * Added dimension load limit
+
+   <img src="https://github.com/JordiFerrerB/sis-horizontalselector/blob/main/imgs/data-limit-example.PNG">
+

@@ -160,12 +160,31 @@ define([], function () {
             show: false,
             defaultValue: 10,
           },
+          dataSizeSwitch: {
+            type: "boolean",
+            ref: "dataSizeSwitch",
+            label: "Data Size",
+            component: "switch",
+            defaultValue: false,
+            options: [
+              {
+                value: false,
+                label: "Default",
+              },
+              {
+                value: true,
+                label: "Custom",
+              },
+            ],
+          },
           initialDataFetchHeight: {
             type: "number",
             ref: "qListObjectDef.qInitialDataFetch.0.qHeight",
-            label: "qHeight",
-            show: false,
-            defaultValue: 25,
+            label: "Data size limit",
+            show: (data) => {
+              return data.dataSizeSwitch;
+            },
+            defaultValue: 100,
           },
         },
       },

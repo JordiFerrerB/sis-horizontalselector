@@ -76,7 +76,7 @@ define([], function () {
             component: "dropdown",
             ref: "fieldLabelPos",
             label: "Label position",
-            defaultValue: "LEFT",
+            defaultValue: "Up",
             options: [
               {
                 value: "UP",

@@ -26,6 +26,8 @@ define([
         });
         $scope.dropdownValue = "test";
 
+        console.log($scope)
+
         // Collect fields data from $scope.fields
         $scope.getFields = function () {
           $scope.dimData = [];
@@ -39,6 +41,7 @@ define([
                 name: field.qListObject.qDimensionInfo.qFallbackTitle,
                 values: field.qListObject.qDataPages[0].qMatrix.map((value) => {
                   return {
+                    index: value[0].qElemNumber,
                     value: value[0].qText,
                     qNum: value[0].qNum,
                     state: value[0].qState,
@@ -60,9 +63,10 @@ define([
         };
 
         var getTargetValue = function (target) {
-          var dataValue = target.attr("data-value");
-          var qNum = target.attr("data-qnum");
-          return !isNaN(qNum) ? parseInt(qNum) : dataValue;
+          var dataValue = target.attr("data-qIndex");
+          /* var qNum = target.attr("data-qnum");
+          return !isNaN(qNum) ? parseInt(qNum) : dataValue; */
+          return parseInt(dataValue);
         };
 
         // Add value to queue and select/deselect
@@ -117,12 +121,18 @@ define([
           }
         };
 
+        var selectValues = function(dimension, values){
+          console.log('SELECCIONANDO VALORES ', dimension, values)
+          app.field(dimension).select(values, true, true).then(data => console.log('FILTRADO:  ' + data))
+        }
+
         // On swipe end: selectValues
         $scope.onSwipe = function (event) {
           if ($scope.swipeSelections.selectValues) {
-            app
+            selectValues($scope.swipeSelections.selectedDimension, $scope.swipeSelections.selectValues)
+            /* app
               .field($scope.swipeSelections.selectedDimension)
-              .selectValues($scope.swipeSelections.selectValues, true, true);
+              .selectValues($scope.swipeSelections.selectValues, true, true); */
           }
           $scope.swipeSelections = {};
         };
@@ -137,7 +147,8 @@ define([
           var dimension = target.attr("data-dim");
           var value = getTargetValue(target);
 
-          app.field(dimension).selectValues([value], true, true);
+          selectValues(dimension, [value]);
+          /* app.field(dimension).selectValues([value], true, true); */
         };
 
         // Toggle Dropdown
@@ -199,9 +210,10 @@ define([
         $scope.onConfirmDropdownSelection = function (event) {
           // Select values
           if ($scope.swipeSelections.selectValues) {
-            app
+            selectValues($scope.swipeSelections.selectedDimension, $scope.swipeSelections.selectValues)
+            /* app
               .field($scope.swipeSelections.selectedDimension)
-              .selectValues($scope.swipeSelections.selectValues, true, true);
+              .selectValues($scope.swipeSelections.selectValues, true, true); */
           }
           $scope.swipeSelections = {};
 

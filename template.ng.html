@@ -8,7 +8,7 @@
         <!-- LIST -->
         <div ng-if="dimension.fieldType == 'LIST'" class="lui-buttongroup">
             <button class="lui-button lui-buttongroup__button {{qValue.state}}" ng-repeat="qValue in dimension.values"
-                data-value="{{qValue.value}}" data-dim="{{dimension.name}}" data-qNum="{{qValue.qNum}}"
+                data-value="{{qValue.value}}" data-dim="{{dimension.name}}" data-qNum="{{qValue.qNum}}" data-qIndex="{{qValue.index}}"
                 ng-click="onClickButton($event)" cl-swipestart="onSwipeStart($event)"
                 cl-swipeupdate="onSwipeUpdate($event)" cl-swipe="onSwipe($event)">
                 <span ng-style="{'font-weight': layout.settings.values.fontWeight, 'font-size': layout.settings.values.fontSize}">{{qValue.value}}</span>

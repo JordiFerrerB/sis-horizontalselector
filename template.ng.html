@@ -23,12 +23,19 @@
             </button>
             <!-- DROPDOWN OPTIONS -->
             <ul class="popover lui-popover lui-list">
-                <div class="dropdown-header">
+                <div class="dropdown-header" id="test">
+                    <div class="lui-search">
+                        <span class="lui-icon  lui-icon--search  lui-search__search-icon"></span>
+                        <input class="lui-search__input" maxlength="255" type="text" placeholder="Search" ng-model="dropdownSearch" ng-change="filterOptions()"/>
+                        <button class="lui-search__clear-button">
+                          <span class="lui-icon  lui-icon--small  lui-icon--close"></span>
+                        </button>
+                    </div>
                     <button id="cancel-sel-button" class="lui-button  lui-button--danger" ng-click="onCancelDropdownSelection($event)" data-dim="{{dimension.name}}"><i class="lui-icon lui-icon--close rm-pointer-events"></i></button>
                     <button id="confirm-sel-button" class="lui-button  lui-button--success" ng-click="onConfirmDropdownSelection($event)"><i class="lui-icon lui-icon--tick rm-pointer-events"></i></button>
                 </div>
-                <li class="lui-list__item {{qValue.state}}" ng-repeat="qValue in dimension.values"
-                    data-value="{{qValue.value}}" data-dim="{{dimension.name}}" data-qNum="{{qValue.qNum}}"
+                <li class="lui-list__item {{qValue.state}}" ng-repeat="qValue in dimension.activeValues"
+                    data-value="{{qValue.value}}" data-dim="{{dimension.name}}" data-qIndex="{{qValue.index}}"
                     cl-swipestart="onSwipeStart($event)" cl-swipeupdate="onSwipeUpdate($event)"
                     cl-swipe="onDropdownSwipe($event)" ng-click="onDropdownOptionClick($event)">
                     <span>{{qValue.value}}</span>

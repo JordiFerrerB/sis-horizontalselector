@@ -47,3 +47,9 @@ Download the latest version from [here](https://github.com/JordiFerrerB/sis-hori
 
    <img src="https://github.com/JordiFerrerB/sis-horizontalselector/blob/main/imgs/data-limit-example.PNG">
 
+
+      * v1.3.2
+         * Added value search filter on dropdowns.
+   
+   <img src="https://github.com/JordiFerrerB/sis-horizontalselector/blob/main/imgs/dropdownSearch-example.PNG">
+

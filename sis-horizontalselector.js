@@ -24,16 +24,14 @@ define([
         $scope.component.model.Validated.bind(function () {
           $scope.getFields();
         });
-        $scope.dropdownValue = "test";
 
-        console.log($scope)
 
         // Collect fields data from $scope.fields
         $scope.getFields = function () {
           $scope.dimData = [];
           $scope.layout.lists.forEach((field) => {
             if (field.qListObject.qDataPages.length > 0) {
-              $scope.dimData.push({
+              var newDimension = {
                 fieldType: field.fieldType,
                 showLabel: field.showFieldLabel,
                 label: field.fieldLabel,
@@ -47,9 +45,30 @@ define([
                     state: value[0].qState,
                   };
                 }),
-              });
+              };
+
+              newDimension.activeValues = newDimension.values;
+
+              $scope.dimData.push(newDimension);
             }
           });
+        };
+
+        $scope.filterOptions = function(){
+          var filter = this.dropdownSearch.toLowerCase();
+          this.dimension.activeValues = this.dimension.values.filter((option)=> {
+            return option.value.toLowerCase().includes(filter);
+          });
+
+          /* var index = -1;
+          $scope.dimData.forEach((el, i) => {
+            if(el.$$hashKey == this.dimension.$$hashKey){
+              index = i;
+              return;
+            }
+          });
+
+          $scope.dimData[index].activeValues = newValues; */
         };
 
         var setParentIndex = function (value) {
@@ -122,8 +141,8 @@ define([
         };
 
         var selectValues = function(dimension, values){
-          console.log('SELECCIONANDO VALORES ', dimension, values)
-          app.field(dimension).select(values, true, true).then(data => console.log('FILTRADO:  ' + data))
+          // console.log('SELECCIONANDO VALORES ', dimension, values)
+          app.field(dimension).select(values, true, true);
         }
 
         // On swipe end: selectValues

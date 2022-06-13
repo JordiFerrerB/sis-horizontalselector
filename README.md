@@ -1,4 +1,4 @@
-# Sistel Qlik Sense horizontal selections
+# Qlik Sense horizontal selections
 
 Create and interact with field selections with this easy-to-use extension.
 
@@ -53,3 +53,5 @@ Download the latest version from [here](https://github.com/JordiFerrerB/sis-hori
    
    <img src="https://github.com/JordiFerrerB/sis-horizontalselector/blob/main/imgs/dropdownSearch-example.PNG">
 
+      * v1.3.3
+        * Fixed alternate states selections

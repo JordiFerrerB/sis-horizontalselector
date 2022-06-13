@@ -59,16 +59,6 @@ define([
           this.dimension.activeValues = this.dimension.values.filter((option)=> {
             return option.value.toLowerCase().includes(filter);
           });
-
-          /* var index = -1;
-          $scope.dimData.forEach((el, i) => {
-            if(el.$$hashKey == this.dimension.$$hashKey){
-              index = i;
-              return;
-            }
-          });
-
-          $scope.dimData[index].activeValues = newValues; */
         };
 
         var setParentIndex = function (value) {
@@ -83,8 +73,6 @@ define([
 
         var getTargetValue = function (target) {
           var dataValue = target.attr("data-qIndex");
-          /* var qNum = target.attr("data-qnum");
-          return !isNaN(qNum) ? parseInt(qNum) : dataValue; */
           return parseInt(dataValue);
         };
 
@@ -123,7 +111,6 @@ define([
 
           // If first swipe: set dimension to current hovered object
           initializeSwipeSelections(dimension, target);
-          // selectSwipeValue(target, value);
         };
 
         // Add elements hovered to selectionsQueue
@@ -141,17 +128,13 @@ define([
         };
 
         var selectValues = function(dimension, values){
-          // console.log('SELECCIONANDO VALORES ', dimension, values)
-          app.field(dimension).select(values, true, true);
+          app.field(dimension, $scope.layout.qStateName).select(values, true, true);
         }
 
         // On swipe end: selectValues
         $scope.onSwipe = function (event) {
           if ($scope.swipeSelections.selectValues) {
             selectValues($scope.swipeSelections.selectedDimension, $scope.swipeSelections.selectValues)
-            /* app
-              .field($scope.swipeSelections.selectedDimension)
-              .selectValues($scope.swipeSelections.selectValues, true, true); */
           }
           $scope.swipeSelections = {};
         };
@@ -160,14 +143,12 @@ define([
           // End swipe selection on dropdown
         };
 
-        // onClickEvent: Create the selections
         $scope.onClickButton = function (event) {
           var target = $(event.target);
           var dimension = target.attr("data-dim");
           var value = getTargetValue(target);
 
           selectValues(dimension, [value]);
-          /* app.field(dimension).selectValues([value], true, true); */
         };
 
         // Toggle Dropdown
@@ -230,9 +211,6 @@ define([
           // Select values
           if ($scope.swipeSelections.selectValues) {
             selectValues($scope.swipeSelections.selectedDimension, $scope.swipeSelections.selectValues)
-            /* app
-              .field($scope.swipeSelections.selectedDimension)
-              .selectValues($scope.swipeSelections.selectValues, true, true); */
           }
           $scope.swipeSelections = {};
 
